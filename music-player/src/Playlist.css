@@ -1,0 +1,53 @@
+.icon {
+  height: 120px;
+  width: 120px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px grey;
+  z-index: 1;
+  position: relative;
+  bottom: 130px;
+}
+
+
+.pcfi {
+  position: relative;
+  top: 47px;
+  left: 82px;
+  cursor: pointer;
+}
+
+.pp {
+  position: relative;
+  border-radius: 10px;
+  left: 10px;
+  /* top: 2px; */
+  /* background-color:rgba(0, 0, 0, 0.473); */
+  z-index: 0;
+  height: 120px;
+  width: 120px;
+}
+
+.playlist {
+  height: 150px;
+}
+
+.playlist:hover > .icon {
+  transform: scale(1.05);
+}
+
+.playlist:hover > .pp {
+  transform: scale(1.05);
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0.329);
+  transition: 0.5s;
+}
+
+.plt {
+  color: white !important;
+  position: relative;
+  left: 12px;
+  top: 12px;
+}
+
+

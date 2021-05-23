@@ -1,0 +1,24 @@
+.body {
+  background-image:url('./bglight.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  min-height: 100vh;
+  color: grey;
+}
+
+.body-dark {
+  background-image:url('./bgdark.jpg');
+  color: #D2D3D5;
+}
+
+.body-content {
+  padding-top: 60px;
+  padding-left: 40px;
+  padding-bottom: 120px;
+}
+
+.body-content > h1 {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
