@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import * as faceapi from "face-api.js";
 import "./MoodDetection.css";
-//import { useDataLayerValue } from "./DataLayer";
-function App({ popout, mood, setMood }) {
-  //const [{}, dispatch] = useDataLayerValue();
+import Cookies from 'js-cookie'
+import { useDataLayerValue } from "./DataLayer";
+
+function App({ popout }) {
+  const [{mood}, dispatch] = useDataLayerValue();
   const [timer, setTimer] = useState(false);
   useEffect(() => {
     Promise.all([
@@ -18,19 +20,26 @@ function App({ popout, mood, setMood }) {
           .detectAllFaces(video, new faceapi.TinyFaceDetectorOptions())
           .withFaceExpressions();
         if (detections.length === 0) {
-          setMood("No Face Detected");
+          dispatch({
+            type: "SET_MOOD",
+            mood: "No Face Detected",
+          });
         } else {
           var ans = detections[0].expressions;
           var arr1 = Object.keys(ans);
           var arr2 = Object.values(ans);
           let i = arr2.indexOf(Math.max(...arr2));
-          setMood(arr1[i]);
+          dispatch({
+            type: "SET_MOOD",
+            mood: arr1[i],
+          });
+          console.log(Cookies.get('mood'));
           video.pause();
           popout();
         }
       }, 2000);
     });
-  }, [popout, setMood]);
+  }, [popout,dispatch]);
   timer && streamCamVideo();
   function streamCamVideo() {
     var constraints = { audio: false, video: { width: 480, height: 360 } };

@@ -9,7 +9,6 @@ router.route("/add").post((req, res) => {
     singer: req.body.singer,
     cover: req.body.cover,
     link: req.body.link,
-    duration: req.body.duration,
   });
 
   newSong
@@ -38,6 +37,24 @@ router.route("/happy").get((req, res) => {
 
 router.route("/neutral").get((req, res) => {
   Song.find({mood:"neutral"}, (err, rec) => {
+    if (err) res.status(400).json("Error: " + err);
+    else {
+      res.send(rec);
+    }
+  });
+});
+
+router.route("/sad").get((req, res) => {
+  Song.find({mood:"sad"}, (err, rec) => {
+    if (err) res.status(400).json("Error: " + err);
+    else {
+      res.send(rec);
+    }
+  });
+});
+
+router.route("/angry").get((req, res) => {
+  Song.find({mood:"angry"}, (err, rec) => {
     if (err) res.status(400).json("Error: " + err);
     else {
       res.send(rec);

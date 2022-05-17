@@ -8,7 +8,7 @@ import { useDataLayerValue } from "./DataLayer";
 import MoodIcon from "@material-ui/icons/Mood";
 import MoodDetection from "./MoodDetection";
 import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
-function Player({ dark, mood, setMood }) {
+function Player({ dark }) {
   const [{ currentSong }] = useDataLayerValue();
   const [popup, setpopup] = useState(false);
   function popout() {
@@ -63,8 +63,6 @@ function Player({ dark, mood, setMood }) {
                 {popup && (
                   <MoodDetection
                     popout={popout}
-                    mood={mood}
-                    setMood={setMood}
                   />
                 )}
               </div>

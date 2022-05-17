@@ -9,6 +9,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import { deepOrange, deepPurple } from "@material-ui/core/colors";
 import Tooltip from "@material-ui/core/Tooltip";
+// import Cookies from 'js-cookie'
+
 const linkstyle = {
   textDecoration: "none",
   position: "fixed",
@@ -33,9 +35,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Topbar({ changeMode, dark, mood }) {
+function Topbar({ changeMode, dark }) {
   const classes = useStyles();
-  const [{ logged, username }, dispatch] = useDataLayerValue();
+  const [{ logged, username, mood }, dispatch] = useDataLayerValue();
   const [emoji, setEmoji] = useState(" ");
   function handleLogout() {
     var r = window.confirm("Are You Sure?");
@@ -55,7 +57,7 @@ function Topbar({ changeMode, dark, mood }) {
   const ExpressionMap = () => {
     switch (mood) {
       case "neutral":
-        setEmoji("😶");
+        setEmoji("🙂");
         break;
       case "happy":
         setEmoji("😄");
@@ -65,15 +67,6 @@ function Topbar({ changeMode, dark, mood }) {
         break;
       case "angry":
         setEmoji("🤬");
-        break;
-      case "fearful":
-        setEmoji("😖");
-        break;
-      case "disgusted":
-        setEmoji("🤢");
-        break;
-      case "surprised":
-        setEmoji("😲");
         break;
       default:
         setEmoji(" ");

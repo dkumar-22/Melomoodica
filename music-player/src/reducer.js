@@ -7,9 +7,11 @@ export const initialState = {
   songs: [],
   happy: [],
   neutral: [],
+  angry: [],
+  sad: [],
   favorites: null,
   flag: 0,
-  mood: "",
+  mood: "happy",
   emoji: "",
   moodd: false,
   //Remove after finishing the debugging
@@ -32,6 +34,16 @@ function reducer(state, action) {
       return {
         ...state,
         neutral: action.neutral,
+      };
+    case "SET_SAD":
+      return {
+        ...state,
+        sad: action.sad,
+      };
+    case "SET_ANGRY":
+      return {
+        ...state,
+        angry: action.angry,
       };
     case "SET_USER":
       return {
