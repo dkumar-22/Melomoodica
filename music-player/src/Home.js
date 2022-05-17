@@ -10,6 +10,7 @@ import AddSong from "./AddMusic";
 import axios from "axios";
 //import Protected from "./Protected";
 import { useDataLayerValue } from "./DataLayer";
+import Cookies from "js-cookie";
 function Home() {
   const [{ logged }, dispatch] = useDataLayerValue();
   React.useEffect(() => {
@@ -52,6 +53,14 @@ function Home() {
         });
       })
       .catch((err) => console.log(err));
+    dispatch({
+      type: "SET_LOGGED",
+      logged: Cookies.get("loggedcookie"),
+    });
+    dispatch({
+      type: "SET_USER",
+      username: Cookies.get("name"),
+    });
   }, [dispatch]);
   return (
     <Router>

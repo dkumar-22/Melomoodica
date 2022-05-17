@@ -4,11 +4,10 @@ import Body from "./Body";
 import Topbar from "./Topbar";
 import { useState } from "react";
 import { useDataLayerValue } from "./DataLayer";
-import Cookies from 'js-cookie'
+
 function App() {
   const [{songs}] = useDataLayerValue();
   const [dark, setDark] = useState(false);
-  Cookies.set('mood','happy');
   function changeMode() {
     console.log("Trigerred");
     setDark((prev) => !prev);

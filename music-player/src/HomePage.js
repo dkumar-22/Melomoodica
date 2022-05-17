@@ -18,7 +18,7 @@ function Login() {
         src="https://i.imgur.com/VjcL8Wz.png"
         alt="App Logo"
       />
-      <h1 className="home">Music App</h1>
+      <h1 className="home">Melomoodica</h1>
       <div className="btns">
         <Link to="/login" style={linkstyle}>
           <button className="loginb">Login</button>

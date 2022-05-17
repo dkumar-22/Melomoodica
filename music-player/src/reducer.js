@@ -11,7 +11,7 @@ export const initialState = {
   sad: [],
   favorites: null,
   flag: 0,
-  mood: "happy",
+  mood: "neutral",
   emoji: "",
   moodd: false,
   //Remove after finishing the debugging

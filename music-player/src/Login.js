@@ -13,6 +13,7 @@ import Container from "@material-ui/core/Container";
 import axios from "axios";
 import { useDataLayerValue } from "./DataLayer";
 import md5 from "md5";
+import Cookies from "js-cookie";
 //import { BrowserRouter } from 'react-router-dom';
 import { Redirect } from "react-router";
 function Copyright() {
@@ -81,9 +82,9 @@ export default function SignIn() {
               type: "SET_LOGGED",
               logged: true,
             });
-          }
-          //
-          else alert("Something's Wrong");
+            Cookies.set("loggedcookie", true);
+            Cookies.set("name", res.data.firstName);
+          } else alert("Something's Wrong");
         })
         .catch(() => {
           console.log("Error Occured");
@@ -93,7 +94,7 @@ export default function SignIn() {
   }
   const classes = useStyles();
 
-  if (logged) {
+  if (logged || Cookies.get("loggedcookie")===true) {
     return <Redirect to="/app" />;
   }
   return (

@@ -9,7 +9,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import { deepOrange, deepPurple } from "@material-ui/core/colors";
 import Tooltip from "@material-ui/core/Tooltip";
-// import Cookies from 'js-cookie'
+import Cookies from "js-cookie";
 
 const linkstyle = {
   textDecoration: "none",
@@ -46,12 +46,9 @@ function Topbar({ changeMode, dark }) {
         type: "SET_LOGGED",
         logged: false,
       });
-    } else {
-      dispatch({
-        type: "SET_LOGGED",
-        logged: true,
-      });
-    }
+      Cookies.remove("loggedcookie");
+      Cookies.remove("name");
+    } else console.log("Can't Logout");
   }
   // console.log("Mood" + mood);
   const ExpressionMap = () => {
@@ -80,8 +77,8 @@ function Topbar({ changeMode, dark }) {
         src="https://i.imgur.com/VjcL8Wz.png"
         alt="App Logo"
       />
-      <h1 className="app-name">Music</h1>
-      {<ExpressionMap />}
+      <h1 className="app-name">Melomoodica</h1>
+      {<ExpressionMap />} <p className="MoodName">{mood}</p>
       {/* <div className="switch">
         {dark ? <WbSunnyIcon style={{ color: "white" }} /> : <WbSunnyIcon />}
         <Switch checked={dark} onChange={changeMode} />

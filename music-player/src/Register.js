@@ -13,6 +13,8 @@ import Container from "@material-ui/core/Container";
 import axios from "axios";
 import { useDataLayerValue } from "./DataLayer";
 import { Redirect } from "react-router";
+import Cookies from 'js-cookie';
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -71,6 +73,8 @@ export default function SignUp() {
       type: "SET_USER",
       username: details.firstName + " " + details.lastName,
     });
+    Cookies.set('loggedcookie', true)
+    Cookies.set('name', details.firstName)
     console.log(details);
     async function post() {
       axios
@@ -83,7 +87,7 @@ export default function SignUp() {
     post();
   }
 
-  if (logged) {
+  if (logged || Cookies.get('loggedcookie')===true) {
     return <Redirect to="/app" />;
   }
 

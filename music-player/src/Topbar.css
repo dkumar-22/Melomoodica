@@ -49,6 +49,13 @@
     cursor: pointer;
 } */
 
+.MoodName
+{
+    position: relative;
+    left: 40px;
+    color: black;
+}
+
 .mood {
     position: relative;
     left: 30px;
