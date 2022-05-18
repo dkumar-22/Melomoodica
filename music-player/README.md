@@ -1,6 +1,6 @@
 # Melomoodica Web App
 
-### Deployed Link: https://superlative-marigold-19de0c.netlify.app/
+### Deployed Link: https://incomparable-stardust-1c65bb.netlify.app/
 
 ## Introduction
 
