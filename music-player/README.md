@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Melomoodica Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Deployed Link: https://superlative-marigold-19de0c.netlify.app/
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+Melomoodica is an online music listening platform. A user is able to register to the app and listen to music.
+With the help of tensorflow.js API known as face-api.js user's current mood could be identified through their webcam feed and accordingly music would be recommended to them to listen.
 
-### `npm start`
+It can recommend music for 4 different moods : happy, neutral, sad and angry.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Utilised
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+It is MERN based project using MongoDB for database management, a popular NoSQL database management software, we will be using ReactJS for designing the front end and Express and Node JS for designing the backend, thus making it as a full stack project. A Tensorflow.js based API known as face-api.js is used for identifying and analysing the current mood of the user through their webcam feed.
 
-### `npm test`
+## Database Description
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Utilised MongoDB for storing the data. Used 2 MongoDB collections to store and use the data accordingly.
 
-### `npm run build`
+<ul>
+<li>Songs - Stores the songs.</li>
+<li>Users - Stores the registered users.</li>
+</ul>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Functionalities and Sneak Peak of the project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Login / Register Screen:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img src = "images/splashscreen.png"/>
+<img src = "images/login.png"/>
+<img src = "images/register.png"/>
 
-### `npm run eject`
+### Music Playing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<img src = "images/musicplaying.png"/>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### For Different Moods:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<b>Neutral</b>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<img src = "images/neutralmood.png"/>
 
-## Learn More
+<b>Happy</b>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img src = "images/moodhappy.png"/>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<b>Sad</b>
 
-### Code Splitting
+<img src = "images/sadmood.png"/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<b>Angry</b>
 
-### Analyzing the Bundle Size
+<img src = "images/angrymood.png"/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
